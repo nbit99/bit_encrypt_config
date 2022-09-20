@@ -4,6 +4,7 @@
 openssl aes-128-cbc -k 123qwe(密码) -base64 -md md5 -in xxx.propreties > xxx.encrypt
 ```
 读取配置文件时会优先匹配存在的文件，如果找不到，则按文件名称查找.encrypt文件，仍然找不到则返回空的properties
+docker容器部署项目时，由于无法使用控制台输入密码，可以设置密码到环境变量，变量名称：CONFIG_DECRYPT_PWD
 
 ###读取配置文件例子
 ```code
