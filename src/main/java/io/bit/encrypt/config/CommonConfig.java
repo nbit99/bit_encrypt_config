@@ -22,7 +22,7 @@ public class CommonConfig {
 	private static Logger log = LogManager.getLogger(CommonConfig.class);
 	private static final String EXT_NAME = ".encrypt";
 
-	private static InputStream getInputStream(String file){
+	public static InputStream getInputStream(String file){
 		return CommonConfig.class.getClassLoader().getResourceAsStream(file);
 	}
 
@@ -132,6 +132,8 @@ public class CommonConfig {
 	 * @return 返回从控制台获取的密码
 	 */
 	public static String getPassword() {
+		System.out.print("请输入密码：");
+
 		Console console = System.console();
 
 		if(console == null){
